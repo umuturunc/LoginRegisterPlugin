@@ -8,6 +8,7 @@ public final class Loginregister extends JavaPlugin {
     CommandsManager commandsManager;
     JavaPlugin plugin;
     PasswordManager passwordManager;
+    EventsManager eventsManager;
 
     @Override
     public void onEnable() {
@@ -22,6 +23,7 @@ public final class Loginregister extends JavaPlugin {
         plugin = this;
         commandsManager = new CommandsManager(plugin);
         passwordManager = new PasswordManager(plugin);
+        eventsManager = new EventsManager(plugin);
     }
     @Override
     public void onDisable() {

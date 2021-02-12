@@ -14,7 +14,7 @@ public class CommandsManager {
         registerAllCommands();
     }
 
-    public static void registerAllCommands() {
+    private static void registerAllCommands() {
         addCommand("login", new LoginCommand(plugin));
         addCommand("register", new RegisterCommand(plugin));
     }
