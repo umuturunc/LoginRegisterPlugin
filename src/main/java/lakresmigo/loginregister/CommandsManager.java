@@ -19,8 +19,9 @@ public class CommandsManager {
         addCommand("register", new RegisterCommand(plugin));
     }
 
-    public static void addCommand(String commandName, CommandExecutor commandExecutor) {
+    private static void addCommand(String commandName, CommandExecutor commandExecutor) {
         Bukkit.getServer().getPluginCommand(commandName).setExecutor(commandExecutor);
+
     }
 
 }

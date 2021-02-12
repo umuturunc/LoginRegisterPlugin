@@ -1,5 +1,6 @@
 package lakresmigo.loginregister.commands;
 
+import lakresmigo.loginregister.CommandsManager;
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import lakresmigo.loginregister.utilities.PasswordManager;
 import org.bukkit.attribute.Attribute;
@@ -15,6 +16,7 @@ public class LoginCommand implements CommandExecutor {
     public LoginCommand(JavaPlugin plugin) {
         this.plugin = plugin;
     }
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
