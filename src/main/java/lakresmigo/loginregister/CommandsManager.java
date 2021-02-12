@@ -11,6 +11,7 @@ public class CommandsManager {
 
     public CommandsManager(JavaPlugin plugin) {
         this.plugin = plugin;
+        registerAllCommands();
     }
 
     public static void registerAllCommands() {
