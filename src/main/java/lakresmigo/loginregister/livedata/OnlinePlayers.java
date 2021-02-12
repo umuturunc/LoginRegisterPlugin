@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class OnlinePlayers {
 
-    public static HashMap<UUID, Boolean> onlinePlayers = new HashMap<UUID,Boolean>();
+    private static HashMap<UUID, Boolean> onlinePlayers = new HashMap<UUID,Boolean>();
 
     public static boolean isPlayerLoggedIn(Player player)
     {
@@ -18,8 +18,14 @@ public class OnlinePlayers {
         return false;
     }
 
+    public static void setPlayerLoggedIn(Player player)
+    {
+        onlinePlayers.put(player.getUniqueId(),true);
+    }
 
-
-
+    public static void addPlayer(Player player)
+    {
+        onlinePlayers.put(player.getUniqueId(),false);
+    }
 
 }

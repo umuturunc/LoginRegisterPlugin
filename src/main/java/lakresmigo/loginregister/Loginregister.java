@@ -14,6 +14,7 @@ public final class Loginregister extends JavaPlugin {
         // Plugin startup logic
         initializeVariables();
         saveDefaultConfig();
+
     }
 
     private void initializeVariables(){
