@@ -1,0 +1,7 @@
+name: LoginRegister
+version: ${project.version}
+main: lakresmigo.loginregister.Loginregister
+api-version: 1.16
+authors: [ LAKRESMIGO ]
+description: Login and Register Plugin
+website: oceanmonster.net
