@@ -5,3 +5,14 @@ api-version: 1.16
 authors: [ LAKRESMIGO ]
 description: Login and Register Plugin
 website: oceanmonster.net
+commands:
+  login:
+    aliases:
+      - girişyap
+      - girisyap
+    usage: /login şifre
+  register:
+    aliases:
+      - kayıtol
+      - kayitol
+    usage: /register şifre şifretekrar
