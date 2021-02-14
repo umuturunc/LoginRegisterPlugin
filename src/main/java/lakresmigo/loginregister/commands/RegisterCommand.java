@@ -1,6 +1,7 @@
 package lakresmigo.loginregister.commands;
 
 import lakresmigo.loginregister.utilities.PasswordManager;
+import lakresmigo.loginregister.utilities.PermissionManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,8 @@ public class RegisterCommand implements CommandExecutor {
                 if(PasswordManager.arePasswordsMatches(password1,password2))
                 {
                     PasswordManager.addPassword(player,password1);
+                    PermissionManager.removePermision(player,"register");
+                    PermissionManager.addPermission(player,"login");
                     return true;
                 }
             }

@@ -11,8 +11,20 @@ commands:
       - girişyap
       - girisyap
     usage: /login şifre
+    permission: login
   register:
     aliases:
       - kayıtol
       - kayitol
     usage: /register şifre şifretekrar
+    permission: register
+permissions:
+  login:
+    description: permission for login command
+    default: true
+  register:
+    description: permission for register command
+    default: true
+  loggedin:
+    description: permisson for enabling/disabling restrictions
+    default: false

@@ -1,5 +1,6 @@
 package lakresmigo.loginregister.livedata;
 
+import lakresmigo.loginregister.utilities.PasswordManager;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -28,4 +29,13 @@ public class OnlinePlayers {
         onlinePlayers.put(player.getUniqueId(),false);
     }
 
+    public static void removePlayer(Player player)
+    {
+        onlinePlayers.remove(player.getUniqueId());
+    }
+
+    public static boolean isPlayerRegistered(Player player)
+    {
+        return PasswordManager.isPlayerRegistered(player);
+    }
 }

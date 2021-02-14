@@ -1,17 +1,14 @@
 package lakresmigo.loginregister.events;
 
 import lakresmigo.loginregister.livedata.OnlinePlayers;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.*;
 
-public class PlayerJoinEventProcessor implements Listener {
+public class RestrictionsEvent implements Listener {
 
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        OnlinePlayers.addPlayer(event.getPlayer());
-    }
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
@@ -30,8 +27,18 @@ public class PlayerJoinEventProcessor implements Listener {
 
     @EventHandler
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
-        if (!OnlinePlayers.isPlayerLoggedIn(event.getPlayer())) {
-            //to be continued  ...............
-        }
+//        Player player = event.getPlayer();
+//
+//        if(OnlinePlayers.isPlayerRegistered(player))
+//        {
+//            if(event.get)
+//        }
+//        else {
+//
+//        }
+//        if (!OnlinePlayers.isPlayerLoggedIn(event.getPlayer())) {
+//            //to be continued  ...............
+//            if()
+//        }
     }
 }

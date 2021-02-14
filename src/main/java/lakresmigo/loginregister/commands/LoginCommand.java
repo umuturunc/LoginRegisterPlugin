@@ -1,9 +1,8 @@
 package lakresmigo.loginregister.commands;
 
-import lakresmigo.loginregister.CommandsManager;
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import lakresmigo.loginregister.utilities.PasswordManager;
-import org.bukkit.attribute.Attribute;
+import lakresmigo.loginregister.utilities.PermissionManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -30,6 +29,7 @@ public class LoginCommand implements CommandExecutor {
                 if(PasswordManager.isPasswordCorrect(player,password))
                 {
                     OnlinePlayers.setPlayerLoggedIn(player);
+                    PermissionManager.removePermision(player,"login");
                     return true;
                 }
             }

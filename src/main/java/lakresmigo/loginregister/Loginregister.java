@@ -1,14 +1,18 @@
 package lakresmigo.loginregister;
 
-import lakresmigo.loginregister.utilities.PasswordManager;
+import lakresmigo.loginregister.utilities.*;
+import lakresmigo.loginregister.registerers.CommandsRegisterer;
+import lakresmigo.loginregister.registerers.EventsRegisterer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Loginregister extends JavaPlugin {
 
-    CommandsManager commandsManager;
+    CommandsRegisterer commandsRegisterer;
     JavaPlugin plugin;
     PasswordManager passwordManager;
-    EventsManager eventsManager;
+    EventsRegisterer eventsRegisterer;
+    PermissionManager permissionManager;
+    ConfigManager configManager;
 
     @Override
     public void onEnable() {
@@ -21,9 +25,11 @@ public final class Loginregister extends JavaPlugin {
     private void initializeVariables(){
 
         plugin = this;
-        commandsManager = new CommandsManager(plugin);
+        commandsRegisterer = new CommandsRegisterer(plugin);
         passwordManager = new PasswordManager(plugin);
-        eventsManager = new EventsManager(plugin);
+        eventsRegisterer = new EventsRegisterer(plugin);
+        permissionManager = new PermissionManager(plugin);
+        configManager = new ConfigManager(plugin);
     }
     @Override
     public void onDisable() {

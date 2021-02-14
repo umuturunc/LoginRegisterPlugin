@@ -1,4 +1,4 @@
-package lakresmigo.loginregister;
+package lakresmigo.loginregister.registerers;
 
 import lakresmigo.loginregister.commands.LoginCommand;
 import lakresmigo.loginregister.commands.RegisterCommand;
@@ -6,10 +6,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CommandsManager {
+public class CommandsRegisterer {
     static JavaPlugin plugin;
 
-    public CommandsManager(JavaPlugin plugin) {
+    public CommandsRegisterer(JavaPlugin plugin) {
         this.plugin = plugin;
         registerAllCommands();
     }
