@@ -1,1 +1,26 @@
 passwords:
+titles:
+  join:
+    title: Join
+    subtitle: naber
+    fadein: 20
+    stay: 20
+    fadeout: 20
+  register:
+    title: Register
+    subtitle: naber
+    fadein: 20
+    stay: 20
+    fadeout: 20
+  login:
+    title: Login
+    subtitle: naber
+    fadein: 20
+    stay: 20
+    fadeout: 20
+  loginsuccess:
+    title: Success Login
+    subtitle: naber
+    fadein: 20
+    stay: 20
+    fadeout: 20

@@ -2,6 +2,7 @@ package lakresmigo.loginregister.registerers;
 
 import lakresmigo.loginregister.commands.LoginCommand;
 import lakresmigo.loginregister.commands.RegisterCommand;
+import lakresmigo.loginregister.commands.TitleCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,6 +18,7 @@ public class CommandsRegisterer {
     private static void registerAllCommands() {
         addCommand("login", new LoginCommand(plugin));
         addCommand("register", new RegisterCommand(plugin));
+        addCommand("settitle",new TitleCommand(plugin));
     }
 
     private static void addCommand(String commandName, CommandExecutor commandExecutor) {

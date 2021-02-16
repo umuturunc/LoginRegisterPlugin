@@ -16,8 +16,8 @@ public class EventsRegisterer {
 
     private static void registerAllEvents()
     {
-        plugin.getServer().getPluginManager().registerEvents(new RestrictionsEvent(),plugin);
-        plugin.getServer().getPluginManager().registerEvents(new onJoinEvent(),plugin);
+        plugin.getServer().getPluginManager().registerEvents(new RestrictionsEvent(plugin),plugin);
+        plugin.getServer().getPluginManager().registerEvents(new onJoinEvent(plugin),plugin);
         plugin.getServer().getPluginManager().registerEvents(new onQuitEvent(),plugin);
     }
 

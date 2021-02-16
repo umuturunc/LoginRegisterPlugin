@@ -2,6 +2,7 @@ package lakresmigo.loginregister.commands;
 
 import lakresmigo.loginregister.utilities.PasswordManager;
 import lakresmigo.loginregister.utilities.PermissionManager;
+import lakresmigo.loginregister.utilities.TitleManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -30,6 +31,7 @@ public class RegisterCommand implements CommandExecutor {
                     PermissionManager.removePermision(player,"register");
                     PermissionManager.addPermission(player,"login");
                     player.sendMessage("Kayıt olma başarılı. Şimdi lütfen giriş yap");
+                    player.sendTitle(TitleManager.loginTitle);
                     return true;
                 }
             }

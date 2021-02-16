@@ -3,6 +3,7 @@ package lakresmigo.loginregister.commands;
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import lakresmigo.loginregister.utilities.PasswordManager;
 import lakresmigo.loginregister.utilities.PermissionManager;
+import lakresmigo.loginregister.utilities.TitleManager;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,6 +34,7 @@ public class LoginCommand implements CommandExecutor {
                     OnlinePlayers.setPlayerLoggedIn(player);
                     PermissionManager.removePermision(player,"login");
                     player.setGameMode(GameMode.SURVIVAL);
+                    player.sendTitle(TitleManager.loginSuccessTitle);
                     player.sendMessage("Giriş başarılı! Hoş geldin");
                     return true;
                 }

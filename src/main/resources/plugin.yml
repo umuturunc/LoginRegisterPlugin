@@ -18,6 +18,10 @@ commands:
       - kayitol
     usage: /register şifre şifretekrar
     permission: register
+  settitle:
+    aliases:
+      - başlıkayarla
+    permission: titlemanager
 permissions:
   login:
     description: permission for login command
@@ -28,3 +32,5 @@ permissions:
   loggedin:
     description: permisson for enabling/disabling restrictions
     default: false
+  titlemanager:
+    default: op

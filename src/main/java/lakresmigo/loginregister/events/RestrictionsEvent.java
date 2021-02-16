@@ -9,19 +9,67 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.player.*;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 
 public class RestrictionsEvent implements Listener {
 
+    JavaPlugin plugin;
+
+
+    private static ArrayList<String> initialAllowedCommands = new ArrayList<>();
+
+
+    public RestrictionsEvent(JavaPlugin plugin) {
+        this.plugin = plugin;
+
+        initialAllowedCommands.add("/login");
+        initialAllowedCommands.add("/register");
+        initialAllowedCommands.add("/girişyap");
+        initialAllowedCommands.add("/kayıtol");
+    }
+//
+//    private static HashMap<UUID, Long> playerJoinCooldowns = new HashMap<>();
+//
+//    private static int coolDownSeconds = 30;
+//    private static long coolDownTime = 100 * 10 * coolDownSeconds;
+
     private boolean playerNotLoggedIn(Player player) {
         return !OnlinePlayers.isPlayerLoggedIn(player);
     }
+
+//
+//    private void removePlayerCooldownFromList(Player player)
+//    {
+//        playerJoinCooldowns.remove(player.getUniqueId());
+//
+//    }
+//    private void addPlayerCooldownToList(Player player)
+//    {
+//        playerJoinCooldowns.put(player.getUniqueId(),System.currentTimeMillis());
+//    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         player.setGameMode(GameMode.ADVENTURE);
+
+//        addPlayerCooldownToList(player);
+//
+//        new BukkitRunnable() {
+//            @Override
+//            public void run() {
+//                if(OnlinePlayers.isPlayerLoggedIn(player))
+//                {
+////                    removePlayerCooldownFromList(player);
+//                }
+//                else {
+//                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız" );
+//                }
+//            }
+//        }.runTaskLater(plugin,20*30);
+
 
     }
 
@@ -79,15 +127,6 @@ public class RestrictionsEvent implements Listener {
         }
     }
 
-    private static ArrayList<String> initialAllowedCommands = new ArrayList<>();
-
-    public RestrictionsEvent() {
-        initialAllowedCommands.add("/login");
-        initialAllowedCommands.add("/register");
-        initialAllowedCommands.add("/girişyap");
-        initialAllowedCommands.add("/kayıtol");
-
-    }
 
     @EventHandler
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
