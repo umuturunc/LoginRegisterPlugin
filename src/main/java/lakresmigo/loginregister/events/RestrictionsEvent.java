@@ -2,6 +2,9 @@ package lakresmigo.loginregister.events;
 
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -60,21 +63,28 @@ public class RestrictionsEvent implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                if(OnlinePlayers.isPlayerLoggedIn(player))
-                {
-                }
-                else {
-                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız" );
+                if (OnlinePlayers.isPlayerLoggedIn(player)) {
+                } else {
+                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız");
                 }
             }
-        }.runTaskLater(plugin,20*30);
+        }.runTaskLater(plugin, 20 * 30);
 
 
     }
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
-        event.setCancelled(playerNotLoggedIn(event.getPlayer()));
+
+        //Disable player kicking out because of flying check
+        Player player = event.getPlayer();
+        if (playerNotLoggedIn(player)) {
+            Location location = player.getLocation();
+            location.setY(location.getY() - 0.05d);
+            Block block = player.getWorld().getBlockAt(location);
+            if(block.isSolid())
+                event.setCancelled(playerNotLoggedIn(event.getPlayer()));
+        }
 
     }
 

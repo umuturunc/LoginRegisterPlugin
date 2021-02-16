@@ -1,26 +1,26 @@
 passwords:
 titles:
   join:
-    title: Join
-    subtitle: naber
+    title: §6Sunucuya Hoş Geldin
+    subtitle: §2play§6.§1ocean§3monster§6.§4net
     fadein: 20
     stay: 20
     fadeout: 20
   register:
-    title: Register
-    subtitle: naber
+    title: §c/register §8şifre §7şifre
+    subtitle: Sunucuda oynayabilmek için kayıt olmalısınız
     fadein: 20
-    stay: 20
+    stay: 600
     fadeout: 20
   login:
-    title: Login
-    subtitle: naber
+    title: §9/login §cşifre
+    subtitle: Lütfen giriş yapınız
     fadein: 20
-    stay: 20
+    stay: 600
     fadeout: 20
   loginsuccess:
-    title: Success Login
-    subtitle: naber
+    title: Giriş Başarılı
+    subtitle: İyi Oyunlar
     fadein: 20
-    stay: 20
+    stay: 80
     fadeout: 20

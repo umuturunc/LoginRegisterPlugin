@@ -10,11 +10,12 @@ public class ConfigManager {
         this.plugin = plugin;
     }
 
+    public static void reloadConfigFromDisk()
+    {
+        plugin.reloadConfig();
+    }
+
     public static boolean setTitleDeneme(String path, Object value) {
-//        if(configurationSectionExist(path))
-//        {
-//            plugin.getConfig().set(path,value);
-//        }
 
         if (plugin.getConfig().isSet(path) == false)
             return false;
