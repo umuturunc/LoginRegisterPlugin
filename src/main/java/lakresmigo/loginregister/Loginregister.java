@@ -36,4 +36,5 @@ public final class Loginregister extends JavaPlugin {
         // Plugin shutdown logic
     }
 
+
 }

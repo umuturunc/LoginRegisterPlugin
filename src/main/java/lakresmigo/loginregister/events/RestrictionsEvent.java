@@ -30,29 +30,16 @@ public class RestrictionsEvent implements Listener {
 
         initialAllowedCommands.add("/login");
         initialAllowedCommands.add("/register");
-        initialAllowedCommands.add("/girişyap");
-        initialAllowedCommands.add("/kayıtol");
+        initialAllowedCommands.add("/giriş");
+        initialAllowedCommands.add("/kayıt");
     }
-//
-//    private static HashMap<UUID, Long> playerJoinCooldowns = new HashMap<>();
-//
-//    private static int coolDownSeconds = 30;
-//    private static long coolDownTime = 100 * 10 * coolDownSeconds;
+
 
     private boolean playerNotLoggedIn(Player player) {
         return !OnlinePlayers.isPlayerLoggedIn(player);
     }
 
-//
-//    private void removePlayerCooldownFromList(Player player)
-//    {
-//        playerJoinCooldowns.remove(player.getUniqueId());
-//
-//    }
-//    private void addPlayerCooldownToList(Player player)
-//    {
-//        playerJoinCooldowns.put(player.getUniqueId(),System.currentTimeMillis());
-//    }
+
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

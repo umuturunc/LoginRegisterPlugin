@@ -33,14 +33,15 @@ public class onJoinEvent implements Listener {
         Player player = event.getPlayer();
 
         player.sendTitle(TitleManager.joinTitle);
+        player.sendMessage(TitleManager.joinTitle.getSubtitle());
 
         PermissionManager.initializePermission(player);
         OnlinePlayers.addPlayer(player);
         if (OnlinePlayers.isPlayerRegistered(player)) {
             PermissionManager.removePermision(player, "register");
-            player.sendMessage("Lütfen giriş yap");
+            player.sendMessage(TitleManager.loginTitle.getSubtitle());
         } else {
-            player.sendMessage("Lütfen kayıt ol");
+            player.sendMessage(TitleManager.registerTitle.getSubtitle());
             PermissionManager.removePermision(player, "login");
         }
 

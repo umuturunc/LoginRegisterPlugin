@@ -1,26 +1,26 @@
 passwords:
 titles:
   join:
-    title: §6Sunucuya Hoş Geldin
-    subtitle: §2play§6.§1ocean§3monster§6.§4net
+    title: §aSunucuya Hoş Geldiniz
+    subtitle: §cplay§r.§boceanmonster§r.§cnet
     fadein: 20
     stay: 20
     fadeout: 20
   register:
-    title: §c/register §8şifre §7şifre
-    subtitle: Sunucuda oynayabilmek için kayıt olmalısınız
+    title: §6/register §8şifre §7şifre
+    subtitle: §dSunucuda oynayabilmek için §l§n§6kayıt§r§d olmalısınız
     fadein: 20
     stay: 600
     fadeout: 20
   login:
-    title: §9/login §cşifre
-    subtitle: Lütfen giriş yapınız
+    title: §9/login §8şifre
+    subtitle: §dLütfen §9§lgiriş§r§d yapınız
     fadein: 20
     stay: 600
     fadeout: 20
   loginsuccess:
-    title: Giriş Başarılı
-    subtitle: İyi Oyunlar
+    title: §0§kk§r§5Giriş §2Başarılı§0§kk§r
+    subtitle: §aİyi Oyunlar
     fadein: 20
     stay: 80
     fadeout: 20

@@ -8,14 +8,12 @@ website: oceanmonster.net
 commands:
   login:
     aliases:
-      - girişyap
-      - girisyap
+      - giriş
     usage: /login şifre
     permission: login
   register:
     aliases:
-      - kayıtol
-      - kayitol
+      - kayıt
     usage: /register şifre şifretekrar
     permission: register
   settitle:

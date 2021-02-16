@@ -1,5 +1,6 @@
 package lakresmigo.loginregister.commands;
 
+import com.destroystokyo.paper.Title;
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import lakresmigo.loginregister.utilities.PasswordManager;
 import lakresmigo.loginregister.utilities.PermissionManager;
@@ -35,7 +36,8 @@ public class LoginCommand implements CommandExecutor {
                     PermissionManager.removePermision(player,"login");
                     player.setGameMode(GameMode.SURVIVAL);
                     player.sendTitle(TitleManager.loginSuccessTitle);
-                    player.sendMessage("Giriş başarılı! Hoş geldin");
+                    player.sendMessage(TitleManager.loginSuccessTitle.getTitle());
+                    player.sendMessage(TitleManager.loginSuccessTitle.getSubtitle());
                     return true;
                 }
             }

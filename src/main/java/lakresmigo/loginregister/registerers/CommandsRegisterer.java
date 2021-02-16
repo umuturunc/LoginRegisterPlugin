@@ -18,7 +18,7 @@ public class CommandsRegisterer {
     private static void registerAllCommands() {
         addCommand("login", new LoginCommand(plugin));
         addCommand("register", new RegisterCommand(plugin));
-        addCommand("settitle",new TitleCommand(plugin));
+//        addCommand("settitle",new TitleCommand(plugin));
     }
 
     private static void addCommand(String commandName, CommandExecutor commandExecutor) {
