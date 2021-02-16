@@ -29,9 +29,10 @@ public class onJoinEvent implements Listener {
         if(OnlinePlayers.isPlayerRegistered(player))
         {
             PermissionManager.removePermision(player,"register");
+            player.sendMessage("Lütfen giriş yap");
         }
         else {
-            player.sendMessage("You are not registered");
+            player.sendMessage("Lütfen kayıt ol");
             PermissionManager.removePermision(player,"login");
         }
 //        player.recalculatePermissions();

@@ -3,10 +3,12 @@ package lakresmigo.loginregister.commands;
 import lakresmigo.loginregister.livedata.OnlinePlayers;
 import lakresmigo.loginregister.utilities.PasswordManager;
 import lakresmigo.loginregister.utilities.PermissionManager;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LoginCommand implements CommandExecutor {
@@ -30,6 +32,8 @@ public class LoginCommand implements CommandExecutor {
                 {
                     OnlinePlayers.setPlayerLoggedIn(player);
                     PermissionManager.removePermision(player,"login");
+                    player.setGameMode(GameMode.SURVIVAL);
+                    player.sendMessage("Giriş başarılı! Hoş geldin");
                     return true;
                 }
             }

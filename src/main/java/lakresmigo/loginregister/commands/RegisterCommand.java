@@ -29,6 +29,7 @@ public class RegisterCommand implements CommandExecutor {
                     PasswordManager.addPassword(player,password1);
                     PermissionManager.removePermision(player,"register");
                     PermissionManager.addPermission(player,"login");
+                    player.sendMessage("Kayıt olma başarılı. Şimdi lütfen giriş yap");
                     return true;
                 }
             }
