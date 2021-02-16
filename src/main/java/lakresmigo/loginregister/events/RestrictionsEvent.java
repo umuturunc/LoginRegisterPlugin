@@ -10,6 +10,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityTargetLivingEntityEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 
@@ -55,20 +56,18 @@ public class RestrictionsEvent implements Listener {
         Player player = event.getPlayer();
         player.setGameMode(GameMode.ADVENTURE);
 
-//        addPlayerCooldownToList(player);
-//
-//        new BukkitRunnable() {
-//            @Override
-//            public void run() {
-//                if(OnlinePlayers.isPlayerLoggedIn(player))
-//                {
-////                    removePlayerCooldownFromList(player);
-//                }
-//                else {
-//                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız" );
-//                }
-//            }
-//        }.runTaskLater(plugin,20*30);
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                if(OnlinePlayers.isPlayerLoggedIn(player))
+                {
+                }
+                else {
+                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız" );
+                }
+            }
+        }.runTaskLater(plugin,20*30);
 
 
     }
