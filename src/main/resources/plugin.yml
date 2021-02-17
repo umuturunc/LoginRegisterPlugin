@@ -20,6 +20,9 @@ commands:
     aliases:
       - başlıkayarla
     permission: titlemanager
+  configreload:
+    description: config.yml de yapılan değişiklikleri hafızaya alır
+    permission: op
 permissions:
   login:
     description: permission for login command

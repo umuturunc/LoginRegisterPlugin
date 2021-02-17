@@ -1,6 +1,5 @@
 package lakresmigo.loginregister.utilities;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -27,7 +26,7 @@ public class PasswordManager {
     }
 
     public static void addPassword(Player player, String password) {
-        plugin.getConfig().set("passwords."+player.getName(),password);
+        plugin.getConfig().set("passwords." + player.getName(), password);
         plugin.saveConfig();
     }
 

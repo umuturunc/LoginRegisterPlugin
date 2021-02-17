@@ -1,5 +1,6 @@
 package lakresmigo.loginregister.registerers;
 
+import lakresmigo.loginregister.commands.ConfigReloadCommand;
 import lakresmigo.loginregister.commands.LoginCommand;
 import lakresmigo.loginregister.commands.RegisterCommand;
 import lakresmigo.loginregister.commands.TitleCommand;
@@ -19,6 +20,7 @@ public class CommandsRegisterer {
         addCommand("login", new LoginCommand(plugin));
         addCommand("register", new RegisterCommand(plugin));
 //        addCommand("settitle",new TitleCommand(plugin));
+        addCommand("configreload",new ConfigReloadCommand());
     }
 
     private static void addCommand(String commandName, CommandExecutor commandExecutor) {

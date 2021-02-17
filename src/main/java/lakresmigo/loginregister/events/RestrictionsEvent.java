@@ -1,6 +1,7 @@
 package lakresmigo.loginregister.events;
 
 import lakresmigo.loginregister.livedata.OnlinePlayers;
+import lakresmigo.loginregister.utilities.ConfigManager;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -46,16 +47,17 @@ public class RestrictionsEvent implements Listener {
         Player player = event.getPlayer();
         player.setGameMode(GameMode.ADVENTURE);
 
+        int kicktime = ConfigManager.getConfigValueInt("kicktime");
 
         new BukkitRunnable() {
             @Override
             public void run() {
                 if (OnlinePlayers.isPlayerLoggedIn(player)) {
                 } else {
-                    player.kickPlayer("Lütfen 30 saniye içerisinden giriş yapınız");
+                    player.kickPlayer("Lütfen "+(int)kicktime/20+" saniye içinde giriş yapınız");
                 }
             }
-        }.runTaskLater(plugin, 20 * 30);
+        }.runTaskLater(plugin, kicktime);
 
 
     }
@@ -132,9 +134,6 @@ public class RestrictionsEvent implements Listener {
 
             String command = event.getMessage();
             command = command.split(" ")[0];
-//            command = command.substring(1);
-//            player.sendMessage(command);
-
             event.setCancelled(!initialAllowedCommands.contains(command));
         }
     }

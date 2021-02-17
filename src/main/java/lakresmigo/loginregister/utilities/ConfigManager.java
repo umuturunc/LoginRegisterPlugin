@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ConfigManager {
 
     private static JavaPlugin plugin;
+    private static Object defaultValue = 20;
 
     public ConfigManager(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -44,12 +45,22 @@ public class ConfigManager {
 
     public static String getConfigValueString(String path)
     {
+        createIfNotExist(path);
         return plugin.getConfig().getString(path);
     }
 
     public static int getConfigValueInt(String path)
     {
+        createIfNotExist(path);
         return  plugin.getConfig().getInt(path);
+    }
+
+    private static void createIfNotExist(String path)
+    {
+        if(configVariableExist(path) == false)
+        {
+            setConfigValue(path,defaultValue);
+        }
     }
 
 }
